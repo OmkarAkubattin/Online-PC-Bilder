@@ -8,6 +8,7 @@
 
   <div class="row">
     <?php
+    $i=0;
     $result=sql_query("SELECT * FROM `components`");
     if (mysqli_num_rows($result) >0) {
       while($row = mysqli_fetch_assoc($result)){
@@ -21,10 +22,10 @@
                   <h6 class="card-title">'.$row1["name"].'</h6>
                   <p class="card-text">'.$row["component"].'</p>
                   <form class="form-inline" action="index.php" method="POST">
-                    <button type="button" class="btn btn-primary btn-sm ml-5" data-toggle="modal" data-target="#exampleModal">Edit</button>
+                    <button type="button" class="btn btn-primary btn-sm ml-5" data-toggle="modal" data-target="#exampleModal'.$i.'">Edit</button>
                     <button class="btn btn-primary btn-sm ml-2 mr-3" type="submit" name="product_delete" value="'.$tablename.' '.$row1["id"].'">Delete</button>
                   </form>
-                  <div class="modal fade" id="exampleModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
+                  <div class="modal fade" id="exampleModal'.$i.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
                     <div class="modal-content">
                       <div class="modal-header">
@@ -48,7 +49,7 @@
                             }
                             echo '<div class="form-group">
                               <label>'.ucwords($f).' : </label>
-                              <input type="text" name="'.$f.'" class="form-control col-md-11 ml-2" value="'.$row1[$f].'" placeholder="'.$row1[$f].'">
+                              <input type="text" name="'.$f.'" class="form-control col-md-11 ml-2" value="" placeholder="'.$row1[$f].'">
                             </div>';
                           }
                           echo '</div>
@@ -68,6 +69,7 @@
                 </div>
               </div>
             </div>';
+            $i=$i+1;
           }
         }
       }

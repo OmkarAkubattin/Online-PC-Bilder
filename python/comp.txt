@@ -1,0 +1,14 @@
+processor
+motherboard
+memory
+storage
+graphicscard
+cabinet
+powersupply
+cpucooler
+cabinetfan
+monitor
+keyboard
+mouse
+headphones
+speakers

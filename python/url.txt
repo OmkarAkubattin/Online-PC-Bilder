@@ -1,0 +1,14 @@
+https://assembleyourpc.net/components/processor
+https://assembleyourpc.net/components/motherboard
+https://assembleyourpc.net/components/memory
+https://assembleyourpc.net/components/storage
+https://assembleyourpc.net/components/graphics_card
+https://assembleyourpc.net/components/cabinet
+https://assembleyourpc.net/components/power_supply
+https://assembleyourpc.net/components/cpu_cooler
+https://assembleyourpc.net/components/cabinet_fan
+https://assembleyourpc.net/components/monitor
+https://assembleyourpc.net/components/keyboard
+https://assembleyourpc.net/components/mouse
+https://assembleyourpc.net/components/headphones
+https://assembleyourpc.net/components/speakers

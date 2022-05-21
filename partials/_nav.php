@@ -38,7 +38,7 @@
           }
         }
           ?>
-          <div class="dropdown-divider">
+          <div class="dropdown-divider"></div>
           <a class="dropdown-item" href="/project/partials/pcbuild.php">See all</a>
         </div>
       </li>

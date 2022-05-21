@@ -1,7 +1,7 @@
  <footer class="bd-footer bg-dark py-5 mt-5">
 
         <div class="container py-2 text-center">
-            <a class="navbar-brand" href="/project/partials/pcbuild.php">
+            <a class="navbar-brand" href="index.php">
             <?php
                 $result=sql_query("SELECT * FROM `website_info`");
                 if(mysqli_num_rows($result) > 0){

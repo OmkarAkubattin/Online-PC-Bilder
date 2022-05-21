@@ -44,9 +44,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
         if (mysqli_num_rows($result2) >0) {
           while($row2 = mysqli_fetch_assoc($result2)){
             $insertarr[$f]=$row2["component"];
+          }
+        }
       }
-    }
-  }
       else if($f=="id"){
         continue;
       }
@@ -92,6 +92,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     }
   else if(isset($_POST['add_products'])){
     $result=sql_query("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
+    die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   }
   }
 ?>

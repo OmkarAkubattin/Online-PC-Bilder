@@ -1,6 +1,6 @@
 <nav class="navbar navbar-expand-lg navbar-light shadow-sm p-3 px-4 border border-bottom"
   style="background-color: #ffffff; border-color: rgb(197, 197, 197);">
-  <a class="navbar-brand" href="partials/pcbuild.php">
+  <a class="navbar-brand" href="/project/index.php">
   <?php
   $result1=sql_query("SELECT * FROM `website_info`");
   if(mysqli_num_rows($result1) > 0){

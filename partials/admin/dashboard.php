@@ -48,7 +48,7 @@
                             }
                             echo '<div class="form-group">
                               <label>'.ucwords($f).' : </label>
-                              <input type="text" name="'.$f.'" class="form-control col-md-11 ml-2" placeholder="'.$row1[$f].'">
+                              <input type="text" name="'.$f.'" class="form-control col-md-11 ml-2" value="'.$row1[$f].'" placeholder="'.$row1[$f].'">
                             </div>';
                           }
                           echo '</div>

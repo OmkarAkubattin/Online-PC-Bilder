@@ -1,3 +1,4 @@
+<div class="px-4 py-5">
 <h1 class="mb-4">Components</h1>
 <div class="row">
 <?php
@@ -18,4 +19,5 @@
           }
         }
         ?>
+</div>
 </div>

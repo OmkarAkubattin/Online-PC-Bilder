@@ -18,7 +18,7 @@
 
   <div class="collapse navbar-collapse" id="navbarSupportedContent">
     <ul class="navbar-nav ml-auto">
-      <li class="nav-item active mr-3">
+      <li class="nav-item <?php if($_SERVER["PHP_SELF"]=="/project/partials/pcbuild.php"){echo 'active font-weight-bold';}?> mr-3">
         <a class="nav-link" href="/project/partials/pcbuild.php">Build PC<span class="sr-only">(urrent)</span></a>
       </li>
       <li class="nav-item dropdown mr-3">
@@ -38,14 +38,14 @@
           }
         }
           ?>
-          <div class="dropdown-divider"></div>
+          <div class="dropdown-divider">
           <a class="dropdown-item" href="/project/partials/pcbuild.php">See all</a>
         </div>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?php if($_SERVER["PHP_SELF"]=="/project/partials/about.php"){echo 'active font-weight-bold';}?>">
         <a class="nav-link mr-3" href="/project/partials/about.php">About us</a>
       </li>
-      <li class="nav-item">
+      <li class="nav-item <?php if($_SERVER["PHP_SELF"]=="/project/partials/contact.php"){echo 'active font-weight-bold';}?>">
         <a class="nav-link mr-3" href="/project/partials/contact.php">Contact us</a>
       </li>
     </ul>

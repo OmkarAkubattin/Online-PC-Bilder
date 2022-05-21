@@ -230,7 +230,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
       <ul class="nav flex-column">
         <li class="nav-item">
         <form action="index.php" method="GET">
-          <button class="nav-link active btn btn-link" href="#" type="submit" name="dashboard">
+          <button class="nav-link <?php if(isset($_GET['dashboard'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="dashboard">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             Dashboard <span class="sr-only">(current)</span>
           </button>
@@ -238,16 +238,8 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
         </li>
         <li class="nav-item">
         <form action="index.php" method="GET">
-          <button class="nav-link btn btn-link" href="#" type="submit" name="orders">
-          <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-shopping-cart"><circle cx="9" cy="21" r="1"></circle><circle cx="20" cy="21" r="1"></circle><path d="M1 1h4l2.68 13.39a2 2 0 0 0 2 1.61h9.72a2 2 0 0 0 2-1.61L23 6H6"></path></svg> 
-          Products
-          </button>
-        </form>
-        </li>
-        <li class="nav-item">
-        <form action="index.php" method="GET">
 
-          <button class="nav-link btn btn-link" href="#" type="submit" name="products">
+          <button class="nav-link <?php if(isset($_GET['products'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="products">
           <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-card-checklist" viewBox="0 0 16 16">
           <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
           <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
@@ -270,17 +262,11 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['dashboard'])){
     include "dashboard.php";
   }
-  else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['orders'])){
-    include "dashboard.php";  
-  }
   else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['products'])){
     include "products.php";  
   }
   else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['cat_name'])){
     include "add_products.php"; 
-  }
-  else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET[''])){
-    include "dashboard.php";  
   }
   else{
     include "dashboard.php";

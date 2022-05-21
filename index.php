@@ -25,6 +25,7 @@
     require "partials/_s3.php";
     require "partials/_s4.php";
     require "partials/_footer.php";
+    
     ?>
  </body>
 </html>

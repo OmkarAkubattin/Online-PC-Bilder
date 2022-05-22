@@ -95,7 +95,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     }
   else if(isset($_POST['add_products'])){
     $result=sql_query("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
-    die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
+    // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   }
   }
 ?>

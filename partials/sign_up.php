@@ -5,23 +5,6 @@
     header("Location: admin/index.php");
     exit;
 }
-  if($_SERVER['REQUEST_METHOD']=="POST"){
-    $email=$_POST['email'];
-    $pass=password_hash($_POST['password'],PASSWORD_DEFAULT);
-    $fname=$_POST['first_name'];
-    $lname=$_POST['last_name'];
-    $result=sql_query("INSERT INTO `pcbuild_user` (`user`, `pass`, `f_name`, `l_name`, `user_type`) VALUES ('$email', '$pass', '$fname', '$lname', 'user')");
-    if(!$result){
-      // die("SELECT * FROM `pcbuild_user` WHERE 'user'='$email'");
-        echo '<script>
-          alert("Username is Already Available");
-          </script>';
-    }
-    else if(isset($result)){
-      header("Location: login.php");
-      exit;
-  }
-}
 ?>
 <html lang="en">
   <head>
@@ -63,13 +46,21 @@
     alert("Confirm Password Doesn\'t match");
     return false;
   }
+  else if (y.length <8) {
+    alert("Password Length Must 8 to 20 Character");
+    return false;
+  }
+  else if (x =='') {
+    alert("Confirm Password Cannot be Empty");
+    return false;
+  }
 }
     </script>
     <!-- Custom styles for this template -->
     <link href="login.css" rel="stylesheet">
   </head>
   <body>
-    <form class="form-signin" name="myForm" onsubmit="return validateForm()" action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+    <form class="form-signin" name="myForm" onsubmit="return validateForm()" action="login.php" method="POST">
   <div class="text-center mb-4">
     <img src="../images/Logo.png" alt="" width="100" height="100">
     <h1 class="h3 mb-3 font-weight-normal"><b>PC Picker</b></h1>
@@ -96,7 +87,7 @@
     <input type="text" name="confirm_password" class="form-control" placeholder="Confirm Password" required="">
     <label>Confirm Password</label>
   </div>
-  <button class="btn btn-lg btn-primary btn-block" type="submit" name='sign_in'>Sign up</button>
+  <button class="btn btn-lg btn-primary btn-block" type="submit" name='sign_up'>Sign up</button>
   
     <p class="pt-4 text-center"></p>
   <p class="pt-1 text-center">Do you have an account? <a class="no_line"; href="login.php"><b>Sign in</b></a></p>

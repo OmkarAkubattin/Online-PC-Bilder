@@ -38,6 +38,19 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
       width: 25%;
     }
   </style>
+    <script>
+  function validateForm() {
+  let x = document.forms["myForm"]["mobile_number"].value;
+  if (x.length <10 || x.length > 11 ) {
+    alert("Mobile Number Must 10 Character");
+    return false;
+  }
+  else if (x =='') {
+    alert("Mobile Number Cannot be Empty");
+    return false;
+  }
+}
+    </script>
 </head>
 
 <body>
@@ -60,7 +73,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
 
       <div class="col-lg-6 border-right">
         <div class="container col-xxl-10">
-        <form action="<?php echo $_SERVER['PHP_SELF'];?>" method="POST">
+        <form action="<?php echo $_SERVER['PHP_SELF'];?>" name="myForm" onsubmit="return validateForm()"  method="POST">
             <div class="form-group pl-5 pr-5 pt-2">
               <input type="text" class="form-control" id="inputEmail4" name="first_name" placeholder="First name">
             </div>

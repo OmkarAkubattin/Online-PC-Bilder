@@ -25,6 +25,28 @@
       } 
     } 
   } 
+$signup=0;
+  if($_SERVER['REQUEST_METHOD']=="POST"&& isset($_POST['sign_up'])){
+    $email=$_POST['email'];
+    $pass=password_hash($_POST['password'],PASSWORD_DEFAULT);
+    $fname=$_POST['first_name'];
+    $lname=$_POST['last_name'];
+    $result=sql_query("INSERT INTO `pcbuild_user` (`user`, `pass`, `f_name`, `l_name`, `user_type`) VALUES ('$email', '$pass', '$fname', '$lname', 'Admin')");
+    if(!$result){
+      // die("SELECT * FROM `pcbuild_user` WHERE 'user'='$email'");
+        $signup=0;
+        echo '<script>
+          alert("Username is Already Available");
+          </script>';
+    }
+    else{
+      $signup=1;
+    }
+  //   else if(isset($result)){
+  //     header("Location: login.php");
+  //     exit;
+  // }
+}
 ?>
 
 <html lang="en">
@@ -36,9 +58,11 @@
     <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
     <meta name="generator" content="Jekyll v3.8.5">
     <title>Login</title>
-<link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
-
-
+<!-- <link href="https://getbootstrap.com/docs/4.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous"> -->
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+<script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <style>
       .bd-placeholder-img {
         font-size: 1.125rem;
@@ -66,7 +90,6 @@
   if (x != y) {
     alert("Confirm Password Doesn\'t match");
     return false;
-  }
 }
     </script>
     <!-- Custom styles for this template -->
@@ -79,7 +102,16 @@
     <h1 class="h3 mb-3 font-weight-normal"><b>PC Picker</b></h1>
     <p>Login first to Build You'r Dream Pc</p>
   </div>
-
+  <?php
+  if($signup){
+  echo '<div class="alert alert-success alert-dismissible fade show" role="alert">
+  <strong>Successfully !! </strong> Account is Created.
+  <button type="button" class="close" data-dismiss="alert" aria-label="Close">
+    <span aria-hidden="true">&times;</span>
+  </button>
+  </div>';
+  }
+  ?>
   <div class="form-label-group">
     <input type="email" class="form-control" name="email" placeholder="Email address" required="" autofocus="">
     <label>Email address</label>

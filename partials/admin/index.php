@@ -39,12 +39,12 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     }
     foreach ($fields as $f) {
       if($f=="fk_".$tablename){
-        $result2=sql_query("SELECT * FROM `components` WHERE 'component'='$tablename'");
-      // die("SELECT * FROM `components` WHERE 'component'='$tablename'");
+        $result2=sql_query("SELECT * FROM `components` WHERE `component`='$tablename'");
+      // die("SELECT * FROM `components` WHERE `component`='$tablename'");
         if (mysqli_num_rows($result2) >0) {
           while($row2 = mysqli_fetch_assoc($result2)){
-            $insertarr[$f]=$row2["component"];
-            die($row2['component']);
+            $insertarr[$f]=$row2["id"];
+            // die($row2['component']);
 
           }
         }
@@ -54,25 +54,24 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
       }
       else if($f=="img"){
         $status = $statusMsg = ''; 
-        if(isset($_POST["add_products"]) || isset($_POST['save_changes'])){ 
-            $status = 'error'; 
-            if(!empty($_FILES["img"]["name"])) { 
-                // Get file info 
-                $fileName = basename($_FILES["img"]["name"]); 
-                $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
-                
-                // Allow certain file formats 
-                $allowTypes = array('jpg','png','jpeg','gif'); 
-                if(in_array($fileType, $allowTypes)){ 
-                    $image = $_FILES['img']['tmp_name']; 
-                    $imgContent = addslashes(file_get_contents($image)); 
-                
-                    // Insert image content into database 
-                    $insertarr[$f]="'".$imgContent."'";
-                }
-              }
-            }
+        $status = 'error'; 
+        if(!empty($_FILES["img"]["name"])) { 
+            // Get file info 
+            $fileName = basename($_FILES["img"]["name"]); 
+            $fileType = pathinfo($fileName, PATHINFO_EXTENSION); 
+            
+            // Allow certain file formats 
+            $allowTypes = array('jpg','png','jpeg','gif'); 
+            if(in_array($fileType, $allowTypes)){ 
+                $image = $_FILES['img']['tmp_name']; 
+                $imgContent = addslashes(file_get_contents($image)); 
+            
+                // Insert image content into database 
+                $insertarr[$f]="'".$imgContent."'";
+                // die($imgContent);
           }
+        }
+      }
           else{
             $insertarr[$f]="'".$_POST[$f]."'";
           }
@@ -88,13 +87,15 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
           continue;
         }
         $result=sql_query("UPDATE $tablename SET $value = $insertarr[$value] WHERE $tablename.`id` = ".$eid."");
-        // die("UPDATE $tablename SET $value = $insertarr[$value] WHERE $tablename.`id` = ".$eid."");
+        // if($value=='img'){
+        //   // die("UPDATE $tablename SET $value = $insertarr[$value] WHERE $tablename.`id` = ".$eid."");
+        // }
       }
     // die(var_dump($insertarr).'<br>'.var_dump($fields));
     }
   else if(isset($_POST['add_products'])){
     $result=sql_query("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
-    // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
+    die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   }
   }
 ?>

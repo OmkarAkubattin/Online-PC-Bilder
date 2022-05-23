@@ -6,7 +6,7 @@ if($_SERVER['REQUEST_METHOD']=="POST"){
   $lname=$_POST['last_name'];
   $mobilenumber=$_POST['mobile_number'];
   $message=$_POST['message'];
-  $result=sql_query("INSERT INTO `pcbuild_user` (`email`, `f_name`, `l_name`, `mob_no`, `msg`) VALUES ('$email', '$fname', '$lname', '$mobilenumber', '$message')");
+  $result=sql_query("INSERT INTO `contact_us` (`email`, `f_name`, `l_name`, `mob_no`, `msg`) VALUES ('$email', '$fname', '$lname', '$mobilenumber', '$message')");
 }
 ?>
 <!doctype html>

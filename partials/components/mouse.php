@@ -43,7 +43,7 @@
         while($row = mysqli_fetch_assoc($result)){
         echo'<tr>
             <td><img src="data:image/png;base64,'.base64_encode($row['img']).'" width="40px" height="40px"/></td>
-            <td><a href="#">'.$row['name'].'</a></td>
+            <td><a href="'.$row['url'].'">'.$row['name'].'</a></td>
             <td>'.$row['tracking_method'].'</td>
             <td>'.$row['max_dpi'].'</td>
             <td>'.$row['connection_type'].'</td>

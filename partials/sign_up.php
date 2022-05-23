@@ -84,7 +84,7 @@
     <label>Password</label>
   </div>
   <div class="form-label-group">
-    <input type="text" name="confirm_password" class="form-control" placeholder="Confirm Password" required="">
+    <input type="password" name="confirm_password" class="form-control" placeholder="Confirm Password" required="">
     <label>Confirm Password</label>
   </div>
   <button class="btn btn-lg btn-primary btn-block" type="submit" name='sign_up'>Sign up</button>

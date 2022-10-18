@@ -249,10 +249,18 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
           <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z"/>
           <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z"/>
           </svg> 
-          Cocmponents
+           Cocmponents
           <?
           echo $err;
           ?>
+          </button>
+        </form>
+        </li>
+        <li class="nav-item">
+        <form action="index.php" method="GET">
+          <button class="nav-link <?php if(isset($_GET['bulk_import'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="bulk_import">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Bulk Import
           </button>
         </form>
         </li>
@@ -272,6 +280,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   }
   else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['cat_name'])){
     include "add_products.php"; 
+  }
+  else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['bulk_import'])){
+    include "bulk_import.php"; 
   }
   else{
     include "dashboard.php";

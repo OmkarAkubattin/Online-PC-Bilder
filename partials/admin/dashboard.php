@@ -12,7 +12,7 @@
     $result=sql_query("SELECT * FROM `components`");
     if (mysqli_num_rows($result) >0) {
       while($row = mysqli_fetch_assoc($result)){
-        $result1=sql_query("SELECT * FROM ".$row['component']."");
+        $result1=sql_query("SELECT * FROM ".$row['component']." WHERE fk_user=".$_SESSION['id']."");
         if (mysqli_num_rows($result1) >0) {
           while($row1 = mysqli_fetch_assoc($result1)){
             echo '<div class="col text-center p-3" data-role="recipe">

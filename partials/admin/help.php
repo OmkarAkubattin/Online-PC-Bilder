@@ -21,26 +21,39 @@ include "../_nav.php";
   <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js"
     integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo"
     crossorigin="anonymous"></script>
+
     <title>Document</title>
     <style>
         table, th, td {
-            border: 2px solid black;
+            border: 1px solid black;
             font-size: 20px;
         }
         .container{
-            border-style: solid;
+            border: 1px solid;
+        }
+        th{
+         padding: 5px 15px;   
+        }
+        td{
+            padding: 5px 150px;
+        }
+        table{
+            margin-left:auto;
+            margin-right:auto;
+            margin-top:35px;
         }
     </style>
 </head>
+
 <body>
-    <div class="container text-center mt-5 pt-3">
+    <div class="container text-center mt-5 pt-5">
     <h1>Import and Export Products</h1>
     <p>You can upload your products in bulk from a CSV or XLS file. You can add multiple products with minimal effort.</p>
 
     <h3 class="pt-3">Import File Requirements </h3>
     <p>While preparing your CSV or XLS file for import, ensure that your column headers match the headers given below.</p>
 
-    <table style="margin-left:auto;margin-right:auto;" class="pt-3 mb-3">
+    <table class="pt-3 mb-5">
         <thead>
             <tr>
                 <th>CSV Column Header</th>

@@ -98,6 +98,18 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   }
   }
+  if(isset($_POST["submit_file"]))
+    {
+    $file = $_FILES["file"]["tmp_name"];
+    $file_open = fopen($file,"r");
+    while(($csv = fgetcsv($file_open, 1000, ",")) !== false)
+    {
+      $name = $csv[0];
+      $age = $csv[1];
+      $country = $csv[2];
+      mysql_query("INSERT INTO employee VALUES ('$name','$age','country')");
+    }
+    }
 ?>
 <html lang="en"><script type="text/javascript" src="chrome-extension://fholmcjfabjmfdkpojgmakdkoakgihpk/disable-visibility-detection.js"></script><head>
   <meta charset="utf-8">

@@ -2,6 +2,7 @@
 <html lang="en">
 <head>
 <?php
+include "../_conn.php";
 include "../_nav.php";
 ?>
   <!-- Required meta tags -->

@@ -98,7 +98,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   }
   }
-  if(isset($_POST["submit_file"]))
+  if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST["submit_file"]))
     {
     $file = $_FILES["file"]["tmp_name"];
     $file_open = fopen($file,"r");

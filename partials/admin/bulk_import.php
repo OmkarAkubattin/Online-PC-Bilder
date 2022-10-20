@@ -22,7 +22,7 @@
     <div class="col">
         <div class="row ml-2">
             <div id="wrapper">
-                <form method="post" action="import_file_csv.php" enctype="multipart/form-data">
+                <form method="post" action="index.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Select CSV File: </label>
                         <input type="file" name="img" class="form-control-file">

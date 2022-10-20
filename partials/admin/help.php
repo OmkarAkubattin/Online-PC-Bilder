@@ -1,7 +1,9 @@
-<!-- include "../_nav.php"; -->
 <!DOCTYPE html>
 <html lang="en">
 <head>
+<?php
+include "../_nav.php";
+?>
   <!-- Required meta tags -->
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -21,19 +23,23 @@
     <title>Document</title>
     <style>
         table, th, td {
-            border: 1px solid black;
-            border-collapse: collapse;
+            border: 2px solid black;
+            font-size: 20px;
+        }
+        .container{
+            border-style: solid;
         }
     </style>
 </head>
 <body>
+    <div class="container text-center mt-5 pt-3">
     <h1>Import and Export Products</h1>
     <p>You can upload your products in bulk from a CSV or XLS file. You can add multiple products with minimal effort.</p>
 
-    <h2>Import File Requirements </h2>
+    <h3 class="pt-3">Import File Requirements </h3>
     <p>While preparing your CSV or XLS file for import, ensure that your column headers match the headers given below.</p>
 
-    <table>
+    <table style="margin-left:auto;margin-right:auto;" class="pt-3 mb-3">
         <thead>
             <tr>
                 <th>CSV Column Header</th>
@@ -42,32 +48,34 @@
         </thead>
         <tbody>
             <tr>
-                <td>Product Name</td>
+                <th>Name</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <td>Product Name</td>
+                <th>Cores</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <td>Product Name</td>
+                <th>Speed</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <td>Product Name</td>
+                <th>Power</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <td>Product Name</td>
+                <th>Price</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <td>Product Name</td>
+                <th>URL</th>
                 <td>Enter the product's title</td>
             </tr>
         </tbody>
     </table>
-
+    </div>
+<?php
+include "../_footer.php";
+?>
 </body>
 </html>
-<!-- include "../_footer.php"; -->

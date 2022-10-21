@@ -100,14 +100,13 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   }
   if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST["submit_file"]))
     {
-    $file = $_FILES["file"]["tmp_name"];
-    $file_open = fopen($file,"r");
-    while(($csv = fgetcsv($file_open, 1000, ",")) !== false)
+    $importsheet = $_FILES["file"]["tmp_name"];
+    $importsheet_name = str_replace('.csv',"",$_FILES["file"]["name"]);;
+    $importsheet_open = fopen($importsheet,"r");
+    while(($csv = fgetcsv($importsheet_open, 1000, ",")) !== false)
     {
-      $name = $csv[0];
-      $age = $csv[1];
-      $country = $csv[2];
-      mysql_query("INSERT INTO employee VALUES ('$name','$age','country')");
+      while()
+      sql_query("INSERT INTO $importsheet_name VALUES (,,)");
     }
     }
 ?>

@@ -25,7 +25,7 @@
                 <form method="post" action="index.php" enctype="multipart/form-data">
                     <div class="form-group">
                         <label>Select CSV File: </label>
-                        <input type="file" name="img" class="form-control-file">
+                        <input type="file" name="file" class="form-control-file">
                     </div>
                     <input type="submit" class="btn btn-primary btn-block" name="submit_file" value="Import Products"/>
                 </form>

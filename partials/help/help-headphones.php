@@ -21,15 +21,19 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>enclosure_type</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>wireless</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>microphone</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>battery_life</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

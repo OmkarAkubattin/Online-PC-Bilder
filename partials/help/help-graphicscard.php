@@ -21,7 +21,11 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>memory</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>chipset</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

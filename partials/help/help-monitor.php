@@ -21,15 +21,35 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>size</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>res</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>rt</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>refresh</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>panel</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>x_y</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>cr</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>screen</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

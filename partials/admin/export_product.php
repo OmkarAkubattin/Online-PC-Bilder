@@ -1,5 +1,5 @@
 <div class="px-4 py-5">
-<h1 class="mb-4">Bulk Import Products</h1>
+<h1 class="mb-4">Bulk Export Products</h1>
   <div class="row">
     <div class="col">
         <label class="ml-1 mr-4">Export Demo CSV Sheet</label>
@@ -12,7 +12,8 @@
             $result=sql_query("SELECT * FROM `components`");
             if (mysqli_num_rows($result) >0) {
               while($row = mysqli_fetch_assoc($result)){
-                    echo '<a class="dropdown-item" href="product_demo_sheets/'.$row["component"].'.csv">'.$row["component"].'</a>';
+                    echo '<form action="index.php" method="GET">
+                    <button class="dropdown-item" type="submit" name="bulk_import">'.$row["component"].'</button>';
               }
             }
                     ?>

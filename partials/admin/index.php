@@ -152,7 +152,39 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
 }
     }
+
+
+// if(isset($_POST["export"])) {
+// sql_query($query);
+// $items = array();
+// while( $row = $result->fetch_assoc() ) {
+// $items[] = $row;
+// }
+// //Define the filename with current date
+// $fileName = "itemdata-".date('d-m-Y').".xls";
+
+// //Set header information to export data in excel format
+// header('Content-Type: application/vnd.ms-excel');
+// header('Content-Disposition: attachment; filename='.$fileName);
+
+// //Set variable to false for heading
+// $heading = false;
+
+// //Add the MySQL table data to excel file
+// if(!empty($items)) {
+// foreach($items as $item) {
+// if(!$heading) {
+// echo implode("\t", array_keys($item)) . "\n";
+// $heading = true;
+// }
+// echo implode("\t", array_values($item)) . "\n";
+// }
+// }
+// exit();
+// }
+
 ?>
+
 <html lang="en"><script type="text/javascript" src="chrome-extension://fholmcjfabjmfdkpojgmakdkoakgihpk/disable-visibility-detection.js"></script><head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -320,7 +352,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
         </li>
         <li class="nav-item">
         <form action="index.php" method="GET">
-          <button class="nav-link <?php if(isset($_GET['export_product'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="bulk_import">
+          <button class="nav-link <?php if(isset($_GET['export_product'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="export_product">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             Export Product
           </button>

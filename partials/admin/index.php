@@ -318,6 +318,14 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
           </button>
         </form>
         </li>
+        <li class="nav-item">
+        <form action="index.php" method="GET">
+          <button class="nav-link <?php if(isset($_GET['export_product'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="bulk_import">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Export Product
+          </button>
+        </form>
+        </li>
       </ul>
       </ul>
     </div>
@@ -337,6 +345,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   }
   else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['bulk_import'])){
     include "bulk_import.php"; 
+  }
+  else if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['export_product'])){
+    include "export_product.php"; 
   }
   else{
     include "dashboard.php";

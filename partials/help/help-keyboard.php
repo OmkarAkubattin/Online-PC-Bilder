@@ -21,15 +21,19 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>style</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>switch</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>backlit</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>connection_type</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

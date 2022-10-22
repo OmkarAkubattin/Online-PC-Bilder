@@ -21,15 +21,15 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>tracking_method</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>max_dpi</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>connection_type</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

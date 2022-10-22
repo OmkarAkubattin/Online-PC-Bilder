@@ -21,15 +21,19 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>type</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>capacity</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>form_factor</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>Interface</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

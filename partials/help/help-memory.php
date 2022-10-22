@@ -21,7 +21,7 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>modules</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
@@ -29,7 +29,7 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>power</th>
+                <th>latency</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

@@ -21,11 +21,15 @@
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>cores</th>
+                <th>configuration</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>
-                <th>speed</th>
+                <th>wireless</th>
+                <td>Enter the product's title</td>
+            </tr>
+            <tr>
+                <th>frequency_resp</th>
                 <td>Enter the product's title</td>
             </tr>
             <tr>

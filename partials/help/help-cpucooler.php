@@ -18,27 +18,27 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>ram</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's RAM (Random access memory)</td>
             </tr>
             <tr>
                 <th>size</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's size</td>
             </tr>
             <tr>
                 <th>noise_level</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's noise level</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

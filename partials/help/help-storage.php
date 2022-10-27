@@ -18,31 +18,31 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>type</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's type</td>
             </tr>
             <tr>
                 <th>capacity</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's capacity</td>
             </tr>
             <tr>
                 <th>form_factor</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's form factor</td>
             </tr>
             <tr>
                 <th>Interface</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's interface</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

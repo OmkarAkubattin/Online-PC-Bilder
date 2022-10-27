@@ -18,47 +18,47 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>size</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's size</td>
             </tr>
             <tr>
                 <th>res</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's resolution</td>
             </tr>
             <tr>
                 <th>rt</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's RT</td>
             </tr>
             <tr>
                 <th>refresh</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's refresh rate</td>
             </tr>
             <tr>
                 <th>panel</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's panel</td>
             </tr>
             <tr>
                 <th>x_y</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's title X:Y (horizontal and vertical)</td>
             </tr>
             <tr>
                 <th>cr</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's CR (contrast ratio)</td>
             </tr>
             <tr>
                 <th>screen</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's screen type</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

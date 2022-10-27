@@ -18,27 +18,27 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>tracking_method</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's tracking method</td>
             </tr>
             <tr>
                 <th>max_dpi</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's max DPI (Dots per linear inch)</td>
             </tr>
             <tr>
                 <th>connection_type</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's connection type</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

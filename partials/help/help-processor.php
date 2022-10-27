@@ -18,27 +18,27 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>cores</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's no. of cores</td>
             </tr>
             <tr>
                 <th>speed</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's speed</td>
             </tr>
             <tr>
                 <th>power</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's power</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

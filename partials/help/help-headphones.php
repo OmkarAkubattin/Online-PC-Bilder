@@ -18,31 +18,31 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>enclosure_type</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's enclosure type</td>
             </tr>
             <tr>
                 <th>wireless</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's wireless (Yes/No)</td>
             </tr>
             <tr>
                 <th>microphone</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's microphone (Yes/No)</td>
             </tr>
             <tr>
                 <th>battery_life</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's battery life</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

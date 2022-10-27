@@ -18,35 +18,35 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>rpm</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's RPM (Rotations Per Minute)</td>
             </tr>
             <tr>
                 <th>size</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's size</td>
             </tr>
             <tr>
                 <th>noise_level</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's noise level</td>
             </tr>
             <tr>
                 <th>Airflow</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's airflow</td>
             </tr>
             <tr>
                 <th>pwm</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's PWM (Pulse width modulation)</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

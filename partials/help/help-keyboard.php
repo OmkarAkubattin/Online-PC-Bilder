@@ -18,31 +18,31 @@
         <tbody>
             <tr>
                 <th>name</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's name</td>
             </tr>
             <tr>
                 <th>style</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's style</td>
             </tr>
             <tr>
                 <th>switch</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's switch type</td>
             </tr>
             <tr>
                 <th>backlit</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's backlit (Yes/No)</td>
             </tr>
             <tr>
                 <th>connection_type</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's connection type</td>
             </tr>
             <tr>
                 <th>price</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's price</td>
             </tr>
             <tr>
                 <th>url</th>
-                <td>Enter the product's title</td>
+                <td>Enter the product's url</td>
             </tr>
         </tbody>
     </table>

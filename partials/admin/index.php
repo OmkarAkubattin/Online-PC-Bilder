@@ -117,7 +117,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
       while ($x = mysqli_fetch_assoc($result11)){
         $fields[] = $x['Field'];
       }
-      foreach ($fields as $f) {
+      
         if($f=="fk_".$tablename){
           $result2=sql_query("SELECT * FROM `components` WHERE `component`='$tablename'");
           if (mysqli_num_rows($result2) >0) {
@@ -151,37 +151,70 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   $result=sql_query("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
 }
+
+
+if(isset($_POST["export"])) {
+  $tablename=$_POST["export"];
+  $fields = array();
+  $insertarr = array();
+  $result11=sql_query("SHOW COLUMNS FROM ".$tablename."");
+  // die("SHOW COLUMNS FROM ".$tablename."");
+  while ($x = mysqli_fetch_assoc($result11)){
+    $fields[] = $x['Field'];
+  }
+  foreach ($fields as $f) {
+    if($f=="fk_".$tablename){
+      continue;
     }
+    if($f=="fk_user"){
+      continue;
+    }
+    else if($f=="id"){
+      continue;
+    }
+    else if($f=="img"){
+      continue;
+    }
+    else{
+    $insertarr[] = $f;
+    }
+  }
+  // die(var_dump($insertarr));
+  $idskey = implode(', ', array_values($insertarr));
+  $items = array();
+  // die("SELECT $idskey FROM $tablename");
+  $result=sql_query("SELECT $idskey FROM $tablename");
+          if (mysqli_num_rows($result) >0) {
+            while($row = mysqli_fetch_assoc($result)){
+              $items[] = $row;
+            }
+          }
+  //Define the filename with current date
+  $fileName = $tablename.".xls";
 
+  //Set header information to export data in excel format
+  header('Content-Type: application/vnd.ms-excel');
+  header('Content-Disposition: attachment; filename='.$fileName);
+  header("Pragma: no-cache");
+  header("Expires: 0");
 
-// if(isset($_POST["export"])) {
-// sql_query($query);
-// $items = array();
-// while( $row = $result->fetch_assoc() ) {
-// $items[] = $row;
-// }
-// //Define the filename with current date
-// $fileName = "itemdata-".date('d-m-Y').".xls";
+  //Set variable to false for heading
+  $heading = false;
 
-// //Set header information to export data in excel format
-// header('Content-Type: application/vnd.ms-excel');
-// header('Content-Disposition: attachment; filename='.$fileName);
-
-// //Set variable to false for heading
-// $heading = false;
-
-// //Add the MySQL table data to excel file
-// if(!empty($items)) {
-// foreach($items as $item) {
-// if(!$heading) {
-// echo implode("\t", array_keys($item)) . "\n";
-// $heading = true;
-// }
-// echo implode("\t", array_values($item)) . "\n";
-// }
-// }
-// exit();
-// }
+  //Add the MySQL table data to excel file
+  if(!empty($items)) {
+  foreach($items as $item) {
+    if(!$heading) {
+      echo implode("\t", array_keys($item)) . "\n";
+      $heading = true;
+    }
+    else{
+      echo implode("\t", array_values($item)) . "\n";
+  }
+  }
+  }
+  exit();
+}
 
 ?>
 

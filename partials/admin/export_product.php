@@ -12,8 +12,8 @@
             $result=sql_query("SELECT * FROM `components`");
             if (mysqli_num_rows($result) >0) {
               while($row = mysqli_fetch_assoc($result)){
-                    echo '<form action="index.php" method="GET">
-                    <button class="dropdown-item" type="submit" name="bulk_import">'.$row["component"].'</button>';
+                    echo '<form action="index.php" method="POST">
+                    <button class="dropdown-item" type="submit" name="export" value="'.$row["component"].'">'.$row["component"].'</button>';
               }
             }
                     ?>

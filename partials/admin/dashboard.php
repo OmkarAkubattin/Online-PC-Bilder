@@ -15,15 +15,15 @@
         $result1=sql_query("SELECT * FROM ".$row['component']." WHERE fk_user=".$_SESSION['id']."");
         if (mysqli_num_rows($result1) >0) {
           while($row1 = mysqli_fetch_assoc($result1)){
-            echo '<div class="col text-center p-3" data-role="recipe">
-              <div class="card" style="width: 14rem;height: 14rem;">
-                <img class="ml-5 mx-auto d-block" src="data:image/png;base64,'.base64_encode($row1["img"]).'" width="80px" height="80px"/>
+            echo '<div class="col-2 text-center p-3" data-role="recipe">
+              <div class="card" style="width: 14rem;height: 17rem;">
+                <img class="ml-5 pt-3 mx-auto d-block" src="data:image/png;base64,'.base64_encode($row1["img"]).'" width="80px" height="80px"/>
                 <div class="card-body">
                   <h6 class="card-title">'.$row1["name"].'</h6>
                   <p class="card-text">'.$row["component"].'</p>
-                  <form class="form-inline" action="index.php" method="POST">
-                    <button type="button" class="btn btn-primary btn-sm ml-5" data-toggle="modal" data-target="#exampleModal'.$i.'">Edit</button>
-                    <button class="btn btn-primary btn-sm ml-2 mr-3" type="submit" name="product_delete" value="'.$row["component"].' '.$row1["id"].'">Delete</button>
+                  <form action="index.php" method="POST">
+                    <button type="button" class="btn btn-primary btn-sm btn-block" data-toggle="modal" data-target="#exampleModal'.$i.'">Edit</button>
+                    <button class="btn btn-danger btn-sm btn-block" type="submit" name="product_delete" value="'.$row["component"].' '.$row1["id"].'">Delete</button>
                   </form>
                   <div class="modal fade" id="exampleModal'.$i.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">
@@ -59,7 +59,7 @@
                           </div>
                           </div>
                           <div class="modal-footer">
-                            <button type="button" class="btn btn-secondary" data-dismiss="modal">Close</button>
+                            <button type="button" class="btn btn-danger" data-dismiss="modal">Close</button>
                             <button type="submit" name="save_changes" value="'.$tablename.' '.$row1["id"].'" class="btn btn-primary">Save changes</button>
                           </div>
                           </form>

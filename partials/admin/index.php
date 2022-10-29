@@ -12,6 +12,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['logout'])){
     header("Location: ../login.php");
     exit;
 }
+if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['search_component'])){
+  
+}
 if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   $word=explode(" ", $_POST['product_delete']);
   $tablename=$word[0];
@@ -51,6 +54,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
       }
       else if($f=="id"){
         continue;
+      }
+      else if($f=="fk_user"){
+        $insertarr[$f]=$_SESSION["id"];
       }
       else if($f=="img"){
         $status = $statusMsg = ''; 
@@ -110,6 +116,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
     while(($csv = fgetcsv($importsheet_open, 1000, ",")) !== false)
     {
       $i=0;
+      die($csv[1]);
       if($csv[0]=="name"){
       continue;
       }
@@ -117,7 +124,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
       while ($x = mysqli_fetch_assoc($result11)){
         $fields[] = $x['Field'];
       }
-      
+      foreach ($fields as $f) {
         if($f=="fk_".$tablename){
           $result2=sql_query("SELECT * FROM `components` WHERE `component`='$tablename'");
           if (mysqli_num_rows($result2) >0) {
@@ -132,15 +139,15 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
         }
         else if($f=="img"){
           continue;
-      }
+        }
         else if($f=="fk_user"){
           $insertarr[$f]=$_SESSION["id"];
           continue;
-    }
-    else{
-      // die($csv[5]);
-      $insertarr[$f]=$csv[$i];
-    }
+        }
+        else{
+          // die($csv[5]);
+          $insertarr[$f]=$csv[$i];
+        }
       $i=$i+1;
   }
   }
@@ -151,7 +158,7 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   $result=sql_query("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
   // die("INSERT INTO $tablename ($idskey) VALUES ($idsvalue)");
 }
-
+}
 
 if(isset($_POST["export"])) {
   $tablename=$_POST["export"];
@@ -215,6 +222,7 @@ if(isset($_POST["export"])) {
   }
   exit();
 }
+
 
 ?>
 

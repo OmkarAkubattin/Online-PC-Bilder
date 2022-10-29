@@ -17,7 +17,7 @@
       $fields[] = $x['Field'];
     }
     foreach ($fields as $f) {
-      if($f=="img" || $f=="fk_".$tablename || $f=="id"){
+      if($f=="img" || $f=="fk_".$tablename || $f=="id" || $f=='fk_user'){
         continue;
       }
       echo '<div class="form-group col-md-6">

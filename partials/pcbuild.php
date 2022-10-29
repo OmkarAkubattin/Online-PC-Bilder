@@ -3,7 +3,14 @@
   <head>
     <?php
     include "_conn.php";
+    $sahrelink="http://localhost/project/partials/pcbuild.php?";
     $price=0.00;
+    $result2=sql_query("SELECT * FROM `components`");
+    while($row2 = mysqli_fetch_assoc($result2)){
+      if(isset($_COOKIE[$row2['component']])){
+        $sahrelink=$sahrelink.$row2['component'].'='.$_COOKIE[$row2['component']].'&';
+    }
+  }
     if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['delcookies'])){
       setcookie($_POST['delcookies'],'',time()-3600,'/');
       header("Location: pcbuild.php");
@@ -22,7 +29,16 @@
     <script src="https://cdn.jsdelivr.net/npm/popper.js@1.14.7/dist/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@4.3.1/dist/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
     <link rel="icon" type="image/x-icon" href="../images/Logo.png">
+    <link href="assets/plugins/global/plugins.bundle.css" rel="stylesheet" type="text/css"/>
+    <script src="assets/plugins/global/plugins.bundle.js"></script>
     <title>Component</title>
+    <script type="text/javascript">
+function myFunction() {
+  navigator.clipboard.writeText("<?php echo $sahrelink?>");
+  var target = document.getElementById('copyied');
+  target.innerHTML = 'Copied!';
+}
+</script>
   </head>
   <body>
   <?php
@@ -34,6 +50,9 @@
       </div>
     </div>
     <div class="container">
+    <div class="float-left">
+      <button id="copyied" class="btn btn-primary" onclick="myFunction()">Copy to clipboard</button>
+    </div>
       <div class="float-right col-md-4 pr-4 pb-4">
         <div class="input-group-append">
           <span class="input-group-text">₹</span>

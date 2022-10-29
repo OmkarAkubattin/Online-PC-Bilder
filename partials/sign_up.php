@@ -89,13 +89,13 @@
   </div>
   <div class="row mx-2 pb-3">  
   <div class="form-check">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault1">
+  <input class="form-check-input" type="radio" name="flexRadioDefault" value="Seller">
   <label class="form-check-label" for="flexRadioDefault1">
   Seller
   </label>
 </div>
 <div class="form-check mx-4">
-  <input class="form-check-input" type="radio" name="flexRadioDefault" id="flexRadioDefault2" checked>
+  <input class="form-check-input" type="radio" name="flexRadioDefault" value="Affiliate Member" checked>
   <label class="form-check-label" for="flexRadioDefault2">
   Affiliate Member
   </label>

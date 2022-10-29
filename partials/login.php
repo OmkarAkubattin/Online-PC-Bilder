@@ -31,7 +31,8 @@ $signup=0;
     $pass=password_hash($_POST['password'],PASSWORD_DEFAULT);
     $fname=$_POST['first_name'];
     $lname=$_POST['last_name'];
-    $result=sql_query("INSERT INTO `pcbuild_user` (`user`, `pass`, `f_name`, `l_name`, `user_type`) VALUES ('$email', '$pass', '$fname', '$lname', 'Admin')");
+    $usertype=$_POST["flexRadioDefault"];
+    $result=sql_query("INSERT INTO `pcbuild_user` (`user`, `pass`, `f_name`, `l_name`, `user_type`) VALUES ('$email', '$pass', '$fname', '$lname', '$usertype')");
     if(!$result){
       // die("SELECT * FROM `pcbuild_user` WHERE 'user'='$email'");
         $signup=0;

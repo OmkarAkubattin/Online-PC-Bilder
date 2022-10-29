@@ -23,7 +23,7 @@
                   <p class="card-text">'.$row["component"].'</p>
                   <form class="form-inline" action="index.php" method="POST">
                     <button type="button" class="btn btn-primary btn-sm ml-5" data-toggle="modal" data-target="#exampleModal'.$i.'">Edit</button>
-                    <button class="btn btn-primary btn-sm ml-2 mr-3" type="submit" name="product_delete" value="'.$tablename.' '.$row1["id"].'">Delete</button>
+                    <button class="btn btn-primary btn-sm ml-2 mr-3" type="submit" name="product_delete" value="'.$row["component"].' '.$row1["id"].'">Delete</button>
                   </form>
                   <div class="modal fade" id="exampleModal'.$i.'" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel" aria-hidden="true">
                   <div class="modal-dialog" role="document">

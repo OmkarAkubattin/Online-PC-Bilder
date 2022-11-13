@@ -20,6 +20,7 @@
           $_SESSION['email']=$email;
           $_SESSION['firstname']=$row['firstname']; 
           $_SESSION['id']=$row['id'];
+          $_SESSION['user_type']=$row['user_type'];
           header("Location: admin/index.php"); 
         }; 
       } 

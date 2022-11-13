@@ -51,27 +51,34 @@ include "../_nav.php";
 <div class="container-fluid">
 <div class="row">
     <div class="col-3 pt-3">
+    <form action="help.php" method="get">
     <div class="list-group list-group-flush">
-        <a href="#" class="list-group-item list-group-item-action active">Component</a>
-        <a href="#" class="list-group-item list-group-item-action">Processor</a>
-        <a href="#" class="list-group-item list-group-item-action">Motherboard</a>
-        <a href="#" class="list-group-item list-group-item-action">Memory</a>
-        <a href="#" class="list-group-item list-group-item-action">Storage</a>
-        <a href="#" class="list-group-item list-group-item-action">Graphicscard</a>
-        <a href="#" class="list-group-item list-group-item-action">Cabinet</a>
-        <a href="#" class="list-group-item list-group-item-action">Powersupply</a>
-        <a href="#" class="list-group-item list-group-item-action">Cpucooler</a>
-        <a href="#" class="list-group-item list-group-item-action">Cabinetfan</a>
-        <a href="#" class="list-group-item list-group-item-action">Monitor</a>
-        <a href="#" class="list-group-item list-group-item-action">Keyboard</a>
-        <a href="#" class="list-group-item list-group-item-action">Mouse</a>    
-        <a href="#" class="list-group-item list-group-item-action">Headphones</a>
-        <a href="#" class="list-group-item list-group-item-action" tabindex="-1" aria-disabled="true">Speakers</a>
+    <?php
+    $result=sql_query("SELECT * FROM `components`");
+      if (mysqli_num_rows($result) >0) {
+        while($row = mysqli_fetch_assoc($result)){
+        if($_GET['help_cat']==$row['component']){
+        echo '<button href="#" type="submit" class="list-group-item list-group-item-action active" name="help_cat" value="'.$row['component'].'">'.$row['component'].'</button>';
+        }
+        else{
+        echo '<button href="#" type="submit" class="list-group-item list-group-item-action" name="help_cat" value="'.$row['component'].'">'.$row['component'].'</button>';
+        }
+      }
+      }
+        ?>
     </div>
+      </form>
     </div>
     <div class="col-7 container">
     <?php
-include "../help/help-processor.php";
+    if($_SERVER['REQUEST_METHOD']=="GET" && isset($_GET['help_cat'])){
+      // setcookie($_POST['delcookies'],'',time()-3600,'/');
+      // header("Location: pcbuild.php");
+      include "../help/help-".$_GET['help_cat'].".php";
+    }
+    else{
+      include "../help/help-processor.php";
+    }
 ?>
     </div>
   </div>

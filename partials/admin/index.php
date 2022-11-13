@@ -189,13 +189,15 @@ if(isset($_POST["export"])) {
   // die(var_dump($insertarr));
   $idskey = implode(', ', array_values($insertarr));
   $items = array();
-  // die("SELECT $idskey FROM $tablename");
-  $result=sql_query("SELECT $idskey FROM $tablename");
+  // die("SELECT $idskey FROM $tablename WHERE fk_user=".$_SESSION["id"]."");
+  $result=sql_query("SELECT $idskey FROM $tablename WHERE fk_user=".$_SESSION["id"]."");
           if (mysqli_num_rows($result) >0) {
             while($row = mysqli_fetch_assoc($result)){
               $items[] = $row;
+              // die(var_dump($row));
             }
           }
+          // die(var_dump($items));
   //Define the filename with current date
   $fileName = $tablename.".xls";
 
@@ -211,7 +213,11 @@ if(isset($_POST["export"])) {
   //Add the MySQL table data to excel file
   if(!empty($items)) {
   foreach($items as $item) {
-    if(!$heading) {
+    if(sizeof($items)==1){
+      echo implode("\t", array_keys($item)) . "\n";
+      echo implode("\t", array_values($item)) . "\n";
+    }
+    else if(!$heading) {
       echo implode("\t", array_keys($item)) . "\n";
       $heading = true;
     }
@@ -396,6 +402,14 @@ if(isset($_POST["export"])) {
           <button class="nav-link <?php if(isset($_GET['export_product'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="export_product">
             <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
             Export Product
+          </button>
+        </form>
+        </li>
+        <li class="nav-item">
+        <form action="../help/help.php" method="GET">
+          <button class="nav-link <?php if(isset($_GET['help'])){echo 'active';}?> btn btn-link" href="#" type="submit" name="help_cat" value="processor">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-home"><path d="M3 9l9-7 9 7v11a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2z"></path><polyline points="9 22 9 12 15 12 15 22"></polyline></svg>
+            Help : Product Import
           </button>
         </form>
         </li>

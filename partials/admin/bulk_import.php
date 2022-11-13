@@ -2,7 +2,7 @@
 <h1 class="mb-4">Bulk Import Products</h1>
   <div class="row">
     <div class="col">
-        <label class="ml-1 mr-4">Export Demo CSV Sheet</label>
+        <label class="ml-1 mr-4">Export CSV Sheet</label>
         <div class="dropdown">
   <button class="btn btn-Primary dropdown-toggle" type="button" id="dropdownMenuButton" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
     Download Sheet

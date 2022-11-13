@@ -21,6 +21,10 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
   $eid=intval($word[1]);
   $result=sql_query("DELETE FROM ".$tablename." WHERE id=".$eid."");
 }
+if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['user_delete'])){
+  $tablename="pcbuild_user";
+  $result=sql_query("DELETE FROM ".$tablename." WHERE id=".$_POST['user_delete']."");
+}
   $tablename='';
   if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['add_products']) || isset($_POST['save_changes']) ){
     if(isset($_POST['add_products'])){
@@ -53,6 +57,9 @@ if($_SERVER['REQUEST_METHOD']=="POST" && isset($_POST['product_delete'])){
         }
       }
       else if($f=="id"){
+        continue;
+      }
+      else if($f=="created"){
         continue;
       }
       else if($f=="fk_user"){
